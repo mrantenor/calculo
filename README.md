@@ -1,4 +1,4 @@
 # Cálculo
 Aplicação de conhecimentos de cálculo vetorial, diferencial e integral multivariável em atividades práticas.
-- [Movimento de Uma Partícula](calculo/movimento_de_uma_particula): Aplicação da trajetória de uma partícula ao longo de uma função paramétrica tridimensional com seus respectivos vetores unitários tangente, normal e binormal.
+- [Movimento de Uma Partícula](../movimento_de_uma_particula): Aplicação da trajetória de uma partícula ao longo de uma função paramétrica tridimensional com seus respectivos vetores unitários tangente, normal e binormal.
 - [m]

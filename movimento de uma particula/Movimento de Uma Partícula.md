@@ -1,3 +1,4 @@
+# Movimento de Uma Partícula
 ## Problema
 Determine o movimento de uma partícula ao longo de uma hélice circular com funções paramétricas $\vec{r}(t) = cos(t) \hat{i} +sin(t) \hat{j}  + t \hat{k}$ , com $0 < t < 3\pi$ e seus respectivos vetores tangente, normal e binormal.
 
@@ -133,13 +134,17 @@ convert -delay 0 -loop 0 *.png animacao.gif
 ```
 ### Exemplos
 Veja alguns resultados de funções paramétricas diferentes:
-![Figura 1|500](images/trajetoria_(1).gif)
+![Figura 1](../images/trajetoria_(1).gif)
+
  $\vec{r}(t) = <cos(t),sin(t),t>$
+ 
  ---
  
-![Figura 1|500](images/trajetoria_(2).gif)
+![Figura 1|500](../images/trajetoria_(2).gif)
+
 $\vec{r}(t) = <cos(t),sin(t),cos^2(t)>$
 
 ---
-![Figura 1|500](images/trajetoria_(3).gif)
+![Figura 1|500](../images/trajetoria_(3).gif)
+
 $\vec{r}(t) = <cos(t),sin(t),cos^3(t)>$

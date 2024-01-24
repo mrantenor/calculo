@@ -136,15 +136,15 @@ convert -delay 0 -loop 0 *.png animacao.gif
 Veja alguns resultados de funções paramétricas diferentes:
 ![Figura 1](../images/trajetoria_(1).gif)
 
- $\vec{r}(t) = <cos(t),sin(t),t>$
+$\vec{r}(t) = cos(t) \hat{i} + sin(t) \hat{j} + t \hat{k}$
  
  ---
  
 ![Figura 1|500](../images/trajetoria_(2).gif)
 
-$\vec{r}(t) = <cos(t),sin(t),cos^2(t)>$
+$\vec{r}(t) = cos(t) \hat{i} + sin(t) \hat{j} + cos^2(t) \hat{k}$
 
 ---
 ![Figura 1|500](../images/trajetoria_(3).gif)
 
-$\vec{r}(t) = <cos(t),sin(t),cos^3(t)>$
+$\vec{r}(t) = cos(t) \hat{i} + sin(t) \hat{j} + cos^3(t) \hat{k}$

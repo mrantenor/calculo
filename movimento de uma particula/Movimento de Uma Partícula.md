@@ -24,7 +24,6 @@ $$\vec{B}(t) =  \frac{1}{\sqrt{2}} \cdot \begin{vmatrix}
   -\sin(t) & \cos(t) & 1\\
   -\cos(t) & -\sin(t) & 0\\
   \end{vmatrix} = \frac{1}{\sqrt{2}} \cdot<\sin t,-\cos t,1>$$
-  
   ---
 ## Plotagem do Gráfico
 1) Para visualizarmos as informações que acabamos de calcular, usaremos Jupyter Notebook e algumas bibliotecas.
@@ -74,7 +73,7 @@ B = sp.simplify(sp.vector.cross(T,N))
 
 ---
 
-A partir de agora, partiremos para a plotagem do gráfico. É importante a partir de agora, definirmos o intervalo da nossa variável, como proposto pelo exercício de $0 < t < 2 \pi$
+A partir de agora, partiremos para a plotagem do gráfico. É importante a partir de agora, definirmos o intervalo da nossa variável, como proposto pelo exercício de $0<t<2\pi$
 ```
 t_vals = np.linspace(0, 2*np.pi, 50)
 t_vals_n = np.arange(0, 50, 1)
@@ -91,7 +90,6 @@ for i_,n_ in zip(t_vals,t_vals_n):
     plt.legend()
     plt.savefig('/home/antenor/Documents/IC/b/'+str(n_)+'.png')
 ```
-![Texto Alternativo](../images/primeir.gif)
-![Texto Alternativo](../images/segund.gif)
-![Texto Alternativo](../images/output.gif)
+![[segund.gif]]
 
+![[primeir.gif]]

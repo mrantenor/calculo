@@ -28,6 +28,7 @@ $$\vec{B}(t) =  \frac{1}{\sqrt{2}} \cdot \begin{vmatrix}
   \end{vmatrix} = \frac{1}{\sqrt{2}} \cdot<\sin t,-\cos t,1>$$
 
 
+
 ---
 ## Gráfico
 ### Bibliotecas
@@ -78,7 +79,7 @@ B = sp.simplify(sp.vector.cross(T,N))
 ```
 
 ### Plotagem do Gráfico
-A partir de agora, partiremos para a plotagem do gráfico. É importante a partir de agora, definirmos o intervalo da nossa variável, como proposto pelo exercício de $0<t<2\pi$
+A partir de agora, partiremos para a plotagem do gráfico. É importante a partir de agora, definirmos o intervalo da nossa variável, como proposto pelo exercício de $0 < t < 2 \pi$:
 ```
 t_vals = np.linspace(0, 2*np.pi, 50)
 t_vals_n = np.arange(0, 50, 1)
@@ -132,13 +133,13 @@ convert -delay 0 -loop 0 *.png animacao.gif
 ```
 ### Exemplos
 Veja alguns resultados de funções paramétricas diferentes:
-![Figura 1|500](../images/trajetoria_(1).gif)
+![Figura 1|500](images/trajetoria_(1).gif)
  $\vec{r}(t) = <cos(t),sin(t),t>$
  ---
  
-![Figura 1|500](../images/trajetoria_(2).gif)
+![Figura 1|500](images/trajetoria_(2).gif)
 $\vec{r}(t) = <cos(t),sin(t),cos^2(t)>$
 
 ---
-![Figura 1|500](../images/trajetoria_(3).gif)
+![Figura 1|500](images/trajetoria_(3).gif)
 $\vec{r}(t) = <cos(t),sin(t),cos^3(t)>$

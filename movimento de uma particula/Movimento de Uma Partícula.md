@@ -19,14 +19,16 @@ $$\| \vec{T}'(t) \| =\sqrt{ \frac{1}{2}\cdot (-\cos^2 (t) \hat{i} -\sin^2(t) \ha
 $$\vec{N}(t) = \frac{\vec{T}'(t)}{\|\vec{T}'(t)\|}$$
 $$\vec{N}(t) = \frac{\vec{T}'(t)}{\|\vec{T}'(t)\|} = \frac{1}{\sqrt{2}}\cdot <-\cos t,-\sin t,0> \cdot \sqrt{2}$$
 $$\vec{N}(t) =<-\cos t,-\sin t,0>$$
+
 ### Vetor Binormal
 Pode ser encontrado através do produto vetorial entre $N(t)$ e $B(t)$, é perpendicular entre ambos.
 $$\vec{B}(t) = \vec{T}(t)\times \vec{N}(t)$$
-$$\vec{B}(t) =  \frac{1}{\sqrt{2}} \cdot \begin{vmatrix} 
-  \hat{i} & \hat{j} & \hat{k}\\ 
-  -\sin(t) & \cos(t) & 1\\
-  -\cos(t) & -\sin(t) & 0\\
-  \end{vmatrix} = \frac{1}{\sqrt{2}} \cdot<\sin t,-\cos t,1>$$
+
+$$\vec{B}(t) =  \frac{1}{\sqrt{2}} \cdot \begin{pmatrix} 
+\hat{i} & \hat{j} & \hat{k} \\ 
+\sin(t) & \cos(t) & 1 \\
+\cos(t) & -\sin(t) & 0 \\
+\end{pmatrix} = \frac{1}{\sqrt{2}} \cdot<\sin t,-\cos t,1>$$
 
 
 

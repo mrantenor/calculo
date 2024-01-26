@@ -4,7 +4,7 @@ Determine o movimento de uma partícula ao longo de uma hélice circular com fun
 
 ## Resolvendo as Equações
 ### Vetor Tangente
-Para determinar o vetor tangente unitário, basta calcular a derivada da função parmétrica:
+Para determinar o vetor unitário tangencial a curva, basta calcular a derivada da função parmétrica:
 $$\vec{r}'(t) = -\sin t \hat{i} +\cos t \hat{j}+ 1\hat{k} = <-\sin t,\cos t, 1>$$
 A norma da derivada:
 $$\| \vec{r}'(t) \| =\sqrt{ -\sin ^2 (t) \hat{i} +\cos^2(t) \hat{j}+ 1^2\hat{k}} = \sqrt{2}$$
@@ -12,7 +12,7 @@ $$\vec{T}(t) = \frac{\vec{r}'(t)}{\|\vec{r}'(t)\|}$$
 $$\vec{T}(t) = \frac{\vec{r}'(t)}{\|\vec{r}'(t)\|} = \frac{1}{\sqrt{2}}\cdot<-\sin (t),\cos(t) ,1>$$
 
 ### Vetor Normal
-O vetor normal unitário pode ser calculado através da derivada do vetor tangente sobre o seu módulo.
+O vetor unitário normal pode ser calculado através da derivada do vetor tangente sobre o seu módulo.
 $$\vec{T}(t) = \frac{1}{\sqrt{2}} \cdot <-\sin t, \cos t, 1>$$
 $$\vec{T}'(t) = \frac{1}{\sqrt{2}}\cdot <-\cos t ,-\sin(t),0>$$
 $$\| \vec{T}'(t) \| =\sqrt{ \frac{1}{2}\cdot (-\cos^2 (t) \hat{i} -\sin^2(t) \hat{j})} = \frac{1}{\sqrt{2}}$$
@@ -21,7 +21,7 @@ $$\vec{N}(t) = \frac{\vec{T}'(t)}{\|\vec{T}'(t)\|} = \frac{1}{\sqrt{2}}\cdot <-\
 $$\vec{N}(t) =<-\cos t,-\sin t,0>$$
 
 ### Vetor Binormal
-Pode ser encontrado através do produto vetorial entre $N(t)$ e $B(t)$, é perpendicular entre ambos.
+O vetor unitário binormal pode ser encontrado através do produto vetorial entre $T(t)$ e $N(t)$:
 $$\vec{B}(t) = \vec{T}(t)\times \vec{N}(t)$$
 
 $$\vec{B}(t) =  \frac{1}{\sqrt{2}} \cdot \begin{pmatrix} 
@@ -46,11 +46,17 @@ from sympy.vector import CoordSys3D
 A biblioteca Sympy nos auxiliará a realizar os cálculos diferenciais das funções vetoriais, Numpy flexibilizará a conversão das funções para serem plotadas e Matplotlib exibirá os gráficos.
 
 ### Funções Adicionais
-É conveniente criar uma função que calcula o módulo das funções vetoriais:
+É conveniente criar uma função que calcula o módulo das funções vetoriais e uma que converte as expressões do Sympy em numéricas:
 ```
-def norma(vector):
+def mod(vector):
     tamanho = sp.simplify(sp.sqrt(sp.vector.dot(vector,vector)))
     return tamanho
+
+def lamb(var,vec):
+    x = sp.lambdify(var, vec.dot(C.i), 'numpy')
+    y = sp.lambdify(var, vec.dot(C.j), 'numpy')
+    z = sp.lambdify(var, vec.dot(C.k), 'numpy')
+    return [x,y,z]
 ```
 
 Neste instante, já estamos aptos a apropriarmo-nos da função vetorial da hélice circular e realizarmos os cálculos vetoriais.
@@ -88,27 +94,12 @@ t_vals = np.linspace(0, 2*np.pi, 50)
 t_vals_n = np.arange(0, 50, 1)
 ```
 
-As variáveis abaixo, são conversões das funções do Sympy para o Numpy que flexibilizará a plotagem do gráfico em Matplotlib.
+As variáveis abaixo, são conversões das funções do Sympy que flexibilizarão a plotagem do gráfico em Matplotlib.
 ```
-############### FUNÇÃO ################
-rx = sp.lambdify(t, r.dot(C.i), 'numpy')
-ry = sp.lambdify(t, r.dot(C.j), 'numpy')
-rz = sp.lambdify(t, r.dot(C.k), 'numpy')
-
-########### VETOR TANGENTE ############
-Tx = sp.lambdify(t, T.dot(C.i), 'numpy')
-Ty = sp.lambdify(t, T.dot(C.j), 'numpy')
-Tz = sp.lambdify(t, T.dot(C.k), 'numpy')
-
-############ VETOR NORMAL #############
-Nx = sp.lambdify(t, N.dot(C.i), 'numpy')
-Ny = sp.lambdify(t, N.dot(C.j), 'numpy')
-Nz = sp.lambdify(t, N.dot(C.k), 'numpy')
-
-########### VETOR BINORMAL ############
-Bx = sp.lambdify(t, B.dot(C.i), 'numpy')
-By = sp.lambdify(t, B.dot(C.j), 'numpy')
-Bz = sp.lambdify(t, B.dot(C.k), 'numpy')
+rx, ry, rz = lamb(t,r)
+Tx, Ty, Tz = lamb(t,T)
+Nx, Ny, Nz = lamb(t,N)
+Bx, By, Bz = lamb(t,B)
 ```
 
 Iniciaremos uma estrutura de repetição que percorrerá todos os valores de $t$ e irá plotar diversos gráficos em diversos frames, cada frame indicará um movimento da partícula ao longo da trajetória definida pela função ```i_``` indicam os valores de ```t_vals``` que é igual aos valores de $t$ e ```n_``` percorre o vetor de numeros naturais ```t_vals_n``` que indicará o nome do arquivo.
@@ -120,12 +111,12 @@ Iniciaremos uma estrutura de repetição que percorrerá todos os valores de $t$
 for i_,n_ in zip(t_vals,t_vals_n):
     ax = plt.axes(projection='3d')
     ax.plot(rx(t_vals),ry(t_vals),rz(t_vals),linewidth=1)
-    ax.scatter(rx(i_),ry(i_),rz(i_),c='orange',marker='s',s=60)
+    ax.scatter(rx(i_),ry(i_),rz(i_),c='black',s=10)
     ax.quiver(rx(i_),ry(i_),rz(i_),Tx(i_),Ty(i_),Tz(i_),color='blue',linewidth=1.2,label='Tangent Vector')
     ax.quiver(rx(i_),ry(i_),rz(i_),Nx(i_),Ny(i_),Nz(i_),color='red',linewidth=1.2,label='Normal Vector')
     ax.quiver(rx(i_),ry(i_),rz(i_),Bx(i_),By(i_),Bz(i_),color='green',linewidth=1.2, label='Binormal Vector')
     plt.legend()
-    plt.savefig(frames/str(n_)+'.png')
+    plt.savefig(str(n_)+'.png')
 ```
 
 ## Gráficos
@@ -136,17 +127,17 @@ convert -delay 0 -loop 0 *.png animacao.gif
 ```
 ### Exemplos
 Veja alguns resultados de funções paramétricas diferentes:
-![Figura 1](../images/trajetoria_(1).gif)
+![Figura 1|500](../images/trajetoria_(1).gif)
 
 $\vec{r}(t) = cos(t) \hat{i} + sin(t) \hat{j} + t \hat{k}$
  
  ---
  
-![Figura 1|500](../images/trajetoria_(2).gif)
+![Figura 2|500](../images/trajetoria_(2).gif)
 
 $\vec{r}(t) = cos(t) \hat{i} + sin(t) \hat{j} + cos^2(t) \hat{k}$
 
 ---
-![Figura 1|500](../images/trajetoria_(3).gif)
+![Figura 3|500](../images/trajetoria_(3).gif)
 
 $\vec{r}(t) = cos(t) \hat{i} + sin(t) \hat{j} + cos^3(t) \hat{k}$

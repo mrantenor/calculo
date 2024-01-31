@@ -3,11 +3,11 @@
 - Cilíndro:
 $\LARGE \frac{x ^ 2}{a ^ 2} \normalsize + \LARGE \frac{y ^ 2}{b ^ 2} \normalsize = 1$  
 
-![Figura 3|](../images/quadricas_cilindro.gif)
+![Figura 1|](../images/quadricas_cilindro.gif)
 
 - Elipsóide:
 $\LARGE \frac{x ^ 2}{a ^ 2} \normalsize + \LARGE \frac{y ^ 2}{b ^ 2} \normalsize + \LARGE\frac{z^ 2}{c^ 2} \normalsize = 1$  
-![Figura 3](../images/quadricas_elipsoide.gif)
+![Figura 2](../images/quadricas_elipsoide.gif)
 
 - Cone:
 $\LARGE \frac{x ^ 2}{a ^ 2} \normalsize + \LARGE \frac{y ^ 2}{b ^ 2} \normalsize = \LARGE \frac{z^ 2}{c^ 2}$  
@@ -15,18 +15,18 @@ $\LARGE \frac{x ^ 2}{a ^ 2} \normalsize + \LARGE \frac{y ^ 2}{b ^ 2} \normalsize
   
 - Parabolóide Eliptico:
 $\LARGE \frac{x ^ 2}{a ^ 2} \normalsize + \LARGE \frac{y ^ 2}{b ^ 2} \normalsize = \LARGE \frac{z}{c}$  
-![Figura 3](../images/quadricas_para_eli.gif)
+![Figura 4](../images/quadricas_para_eli.gif)
   
 - Hiperboloide de Uma Folha:
 $\LARGE \frac{x ^ 2}{a ^ 2} \normalsize + \LARGE \frac{y ^ 2}{b ^ 2} \normalsize - \LARGE \frac{z^ 2}{c^ 2} \normalsize = 1$  
-![Figura 3](../images/quadricas_hiper_1.gif)
+![Figura 5](../images/quadricas_hiper_1.gif)
   
 - Parabolóide Hiperbólico:
 $\LARGE \frac{x ^ 2}{a ^ 2} \normalsize - \LARGE \frac{y ^ 2}{b ^ 2} \normalsize = \LARGE \frac{z}{c}$  
 
-![Figura 3](../images/quadricas_hiper_2.gif)
+![Figura 6](../images/quadricas_hiper_2.gif)
   
 - Hiperbolóide de Duas Folhas:
 $-\LARGE \frac{x ^ 2}{a ^ 2} \normalsize - \LARGE \frac{y ^ 2}{b ^ 2} \normalsize + \LARGE \frac{z^ 2}{c^ 2} \normalsize = 1$
 
-![Figura 3](../images/quadricas_animacao_(1).gif)
+![Figura 7](../images/quadricas_animacao_(1).gif)
